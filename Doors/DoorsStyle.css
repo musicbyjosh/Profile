@@ -1,0 +1,178 @@
+/* CSS Custom Properties (Variables) */
+:root {
+    --folder-base-color: #eb7cab;    /* Dark pink base folder */
+    --folder-overlay-color: #f8b2d3; /* Light pink overlay folder */
+}
+
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Main section styling */
+.main-section {
+    height: 57vw;
+    background-color: #f1f2f2;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Spotlight image styling */
+.spotlight-image {
+    position: absolute;
+    left: 1vw;
+    top: 27vw;
+    transform: translateY(-50%) scale(1) rotate(-4deg);
+    width: 24vw;
+    height: auto;
+    z-index: 2;
+    cursor: pointer;
+}
+
+/* Circle cartoon styling */
+.circle-image {
+    position: absolute;
+    bottom: 1.3vw;
+    left: 36vw;
+    transform: translateX(-50%) scale(1) rotate(-8deg);
+    width: 24vw;
+    height: auto;
+    z-index: 3;
+    cursor: pointer;
+}
+
+/* Curve cartoon styling */
+.curve-image {
+    position: absolute;
+    top: 1vw;
+    left: 26.5vw;
+    transform: scale(1) rotate(3deg);
+    width: 24vw;
+    height: auto;
+    z-index: 2;
+    cursor: pointer;
+}
+
+/* Paperclip styling */
+.paperclip-left {
+    position: absolute;
+    left: -1vw;
+    top: 20vw;
+    transform: rotate(83deg);
+    width: 2vw;
+    height: auto;
+    z-index: 3;
+}
+
+.paperclip-bottom {
+    position: absolute;
+    bottom: -1vw;
+    left: 27vw;
+    transform: rotate(3deg);
+    width: 2vw;
+    height: auto;
+    z-index: 3;
+}
+
+.paperclip-top {
+    position: absolute;
+    top: -1vw;
+    left: 40vw;
+    transform: rotate(9deg);
+    width: 2vw;
+    height: auto;
+    z-index: 3;
+}
+
+/* Folder container for consistent hover area */
+.folder-container {
+    position: absolute;
+    right: 13.5vw;
+    top: 0vw;
+    transform: translateY(-50%) scale(1.5) rotate(-9deg);
+    width: 30vw;
+    height: auto;
+    cursor: pointer;
+}
+
+/* File/Folder SVG styling */
+.folder-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: none;
+    width: 100%;
+    height: auto;
+    z-index: 2;
+}
+
+/* Base folder color styling */
+.folder-base-rect {
+    fill: var(--folder-base-color);
+}
+
+/* Second folder layer - lighter pink */
+.folder-image-overlay {
+    position: absolute;;
+    top: -2%;
+    left: 0;
+    transform: none;
+    width: 100%;
+    height: auto;
+    z-index: 5;
+    transform-style: preserve-3d;
+}
+
+/* Overlay folder color styling */
+.folder-overlay-rect {
+    fill: var(--folder-overlay-color);
+}
+
+/* Store front image positioned to align with folder */
+.store-front-container {
+    position: absolute;
+    right: 1vw; /* Adjust to center better in folder */
+    top: 3vw; /* Move down slightly to sit in folder body */
+    width: 23vw; /* Smaller to fit nicely inside folder */
+    height: 30vw; /* Proportional height */
+    z-index: 4; 
+    rotate: 11deg; 
+    overflow: hidden;
+    border-radius: 1vw;
+    border: .3vw solid #000000; /* Black border */
+    box-sizing: border-box;
+    background-color: #ffffff; /* White background for image */
+}
+
+.store-front-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    /* Cropping adjustments - modify these values to crop the image */
+    transform: scale(1.25) translate(0%, -8%);
+}
+
+/* Folder text styling */
+.folder-text {
+    position: absolute;
+    top: 10vw;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'bely-display', serif;
+    font-size: 2vw;
+    font-weight: 400;
+    color: #eb7cab;
+    text-align: center;
+    z-index: 6;
+    pointer-events: none;
+    white-space: nowrap;
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Poster & Video Layout</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="Thermal-Style.css">
+</head>
+<body>
+  <div class="gradient-box">
+    <div class="content-wrapper">
+      <div class="poster-gallery">
+        <img src="Thermal/vertical thermo.webp" alt="Poster 1" class="poster" data-position="1">
+        <img src="Thermal/vertical thermo.webp" alt="Poster 2" class="poster" data-position="2">
+        <img src="Thermal/vertical thermo.webp" alt="Poster 3" class="poster" data-position="3">
+        <img src="Thermal/vertical thermo.webp" alt="Poster 4" class="poster" data-position="4">
+      </div>
+    </div>
+    <div class="video-section">
+      <div class="video-shadow"></div>
+      <div class="video-background"></div>
+      <div class="video-frame"></div>
+    </div>
+    <div class="video-backdrop-blur"></div>
+    <div class="video-content-isolator">
+      <h1 class="video-title">Intro Video - Joshua Holden.mp4</h1>
+      <div class="pin-button">
+        <div class="pin-outline"></div>
+        <div class="pin-filled"></div>
+      </div>
+      <video controls preload="none" poster="Thermal/thumbnail.webp" class="video-player">
+        <source src="Thermal/Joshua Holden Intro Vid.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </div>
+  <script src="../minified/gsap.min.js"></script>
+  <script src="../Three/three.core.min.js"></script>
+  <script src="ThermalScript.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,291 @@
+
+  [
+  {
+    "id": "041325",
+    "title": "041325",
+    "date": "2025-04-13",
+    "audio": "Audio/ty_041325.mp3",
+    "playerImage": "Player Images/041325-player.webp",
+    "colorMode": "dark"
+  },
+  {
+    "id": "airy synth",
+    "title": "Airy Synth",
+    "date": "2022-08-17",
+    "audio": "Audio/AIRY_SYNTH_BEAT.mp3",
+    "playerImage": "Player Images/airy-synth-player.webp",
+    "colorMode": "light"
+  },
+  {
+    "id": "ambient chords",
+    "title": "Ambient Chords",
+    "date": "2023-01-17",
+    "audio": "Audio/AMBIENT_CHORDS_BEAT.mp3",
+    "playerImage": "Player Images/ambient-chords-player.webp",
+    "colorMode": "light"
+  },
+  {
+    "id": "ambient pad",
+    "title": "Ambient Pad",
+    "date": "2022-09-07",
+    "audio": "Audio/AMBIENT_PAD_BEAT.mp3",
+    "playerImage": "Player Images/ambient-pad-player.webp",
+    "colorMode": "light"
+  },
+  {
+    "id": "ambient reverb",
+    "title": "Ambient Reverb",
+    "date": "2022-11-06",
+    "audio": "Audio/AMBIENT_REVERB_BEAT.mp3",
+    "playerImage": "Player Images/ambient-reverb-player.webp",
+    "colorMode": "light"
+  },
+  {
+    "id": "arped bell",
+    "title": "Arped Bell",
+    "date": "2022-10-25",
+    "audio": "Audio/ARPED_BELL_BEAT.mp3",
+    "playerImage": "Player Images/arped-bell-player.webp",
+    "colorMode": "light"
+  },
+  {
+    "id": "bell and pad",
+    "title": "Bell And Pad",
+    "date": "2022-10-04",
+    "audio": "Audio/BELL_AND_PAD_BEAT.mp3",
+    "playerImage": "Player Images/bell-and-pad-player.webp",
+    "colorMode": "light"
+  },
+  {
+    "id": "chill bell rnb",
+    "title": "Chill Bell RnB",
+    "date": "2022-10-13",
+    "audio": "Audio/CHILL_BELL_RNB_BEAT.mp3",
+    "playerImage": "Player Images/chill-bell-rnb-player.webp",
+    "colorMode": "light"
+  },
+  {
+    "id": "chill reversed",
+    "title": "Chill Reversed",
+    "date": "2022-11-09",
+    "audio": "Audio/CHILL_REVERSED_BELL_BEAT.mp3",
+    "playerImage": "Player Images/chill-reversed-player.webp",
+    "colorMode": "light"
+  },
+  {
+    "id": "chill summer",
+    "title": "Chill Summer",
+    "date": "2022-09-28",
+    "audio": "Audio/CHILL_SUMMER_BEAT.mp3",
+    "playerImage": "Player Images/chill-summer-player.webp",
+    "colorMode": "light"
+  },
+  {
+    "id": "chill synth",
+    "title": "Chill Synth",
+    "date": "2022-08-20",
+    "audio": "Audio/CHILL_SYNTH_BEAT.mp3",
+    "playerImage": "Player Images/chill-synth-player.webp",
+    "colorMode": "light"
+  },
+  {
+    "id": "Chop Arp",
+    "title": "Chop Arp",
+    "date": "2025-04-13",
+    "audio": "Audio/Chop_Arp_Mixed.mp3",
+    "playerImage": "Player Images/chop-arp-player.webp",
+    "colorMode": "light"
+  },
+  {
+    "id": "dark bell",
+    "title": "Dark Bell",
+    "date": "2022-10-07",
+    "audio": "Audio/DARK_BELL_BEAT.mp3",
+    "playerImage": "Player Images/dark-bell-player.webp",
+    "colorMode": "dark"
+  },
+  {
+    "id": "elevator music",
+    "title": "Elevator Music",
+    "date": "2025-04-25",
+    "audio": "Audio/elevator_music_042525.mp3",
+    "playerImage": "Player Images/elevator-music-player.webp",
+    "colorMode": "dark"
+  },
+  {
+    "id": "energetic bell",
+    "title": "Energetic Bell",
+    "date": "2023-01-23",
+    "audio": "Audio/ENERGETIC_BELL_BEAT.mp3",
+    "playerImage": "Player Images/energetic-bell-player.webp",
+    "colorMode": "light"
+  },
+  {
+    "id": "fast bell",
+    "title": "Fast Bell",
+    "date": "2022-11-03",
+    "audio": "Audio/FAST_BELL_BEAT.mp3",
+    "playerImage": "Player Images/fast-bell-player.webp",
+    "colorMode": "dark"
+  },
+  {
+    "id": "flute trap",
+    "title": "Flute Trap",
+    "date": "2022-10-19",
+    "audio": "Audio/FLUTE_TRAP_BEAT.mp3",
+    "playerImage": "Player Images/flute-trap-player.webp",
+    "colorMode": "light"
+  },
+  {
+    "id": "glitchy bell",
+    "title": "Glitchy Bell",
+    "date": "2022-09-16",
+    "audio": "Audio/GLITCHY_BELL_BEAT.mp3",
+    "playerImage": "Player Images/glitchy-bell-player.webp",
+    "colorMode": "light"
+  },
+  {
+    "id": "game track",
+    "title": "Game Track",
+    "date": "2022-10-16",
+    "audio": "Audio/GAME_TRACK_TYPE_BEAT.mp3",
+    "playerImage": "Player Images/game-track-player.webp",
+    "colorMode": "light"
+  },
+  {
+    "id": "groove pop",
+    "title": "Groove Pop",
+    "date": "2022-09-10",
+    "audio": "Audio/GROOVE_POP_BEAT.mp3",
+    "playerImage": "Player Images/groove-pop-player.webp",
+    "colorMode": "light"
+  },
+  {
+    "id": "hard string",
+    "title": "Hard String",
+    "date": "2022-09-22",
+    "audio": "Audio/HARD_STRING_BEAT.mp3",
+    "playerImage": "Player Images/hard-string-player.webp",
+    "colorMode": "light"
+  },
+  {
+    "id": "hype guitar",
+    "title": "Hype Guitar",
+    "date": "2022-09-13",
+    "audio": "Audio/HYPE_GUITAR_BEAT.mp3",
+    "playerImage": "Player Images/hype-guitar-player.webp",
+    "colorMode": "light"
+  },
+  {
+    "id": "melodic bell",
+    "title": "Melodic Bell",
+    "date": "2022-08-26",
+    "audio": "Audio/MELODIC_BELL_BEAT.mp3",
+    "playerImage": "Player Images/melodic-bell-player.webp",
+    "colorMode": "light"
+  },
+  {
+    "id": "nostalgic organ",
+    "title": "Nostalgic Organ",
+    "date": "2022-09-19",
+    "audio": "Audio/NOSTALGIC_ORGAN_BEAT.mp3",
+    "playerImage": "Player Images/nostalgic-organ-player.webp",
+    "colorMode": "dark"
+  },
+  {
+    "id": "nostalgic rnb",
+    "title": "Nostalgic RnB",
+    "date": "2022-09-01",
+    "audio": "Audio/NOSTALGIC_RNB_BEAT.mp3",
+    "playerImage": "Player Images/nostalgic-rnb-player.webp",
+    "colorMode": "light"
+  },
+  {
+    "id": "otherworld",
+    "title": "Otherworld",
+    "date": "2025-05-28",
+    "audio": "Audio/otherworld_052825_2.mp3",
+    "playerImage": "Player Images/otherworld-player.webp",
+    "colorMode": "dark"
+  },
+  {
+    "id": "percussive organ",
+    "title": "Percussive Organ",
+    "date": "2023-01-25",
+    "audio": "Audio/Percussive_Organ_Beat.mp3",
+    "playerImage": "Player Images/percussive-orgain-player.webp",
+    "colorMode": "light"
+  },
+  {
+    "id": "rhythmic bell",
+    "title": "Rhythmic Bell",
+    "date": "2022-08-23",
+    "audio": "Audio/RHYTHMIC_BELL_BEAT.mp3",
+    "playerImage": "Player Images/rhythmic-bell-player.webp",
+    "colorMode": "light"
+  },
+  {
+    "id": "rnb chime",
+    "title": "RnB Chime",
+    "date": "2022-10-28",
+    "audio": "Audio/RNB_CHIME_BEAT.mp3",
+    "playerImage": "Player Images/rnb-chime-player.webp",
+    "colorMode": "dark"
+  },
+  {
+    "id": "simple bell",
+    "title": "Simple Bell",
+    "date": "2022-08-29",
+    "audio": "Audio/SIMPLE_BELL_BEAT.mp3",
+    "playerImage": "Player Images/simple-bell-player.webp",
+    "colorMode": "light"
+  },
+  {
+    "id": "smooth jazz",
+    "title": "Smooth Jazz",
+    "date": "2022-10-31",
+    "audio": "Audio/SMOOTH_JAZZ_BEAT.mp3",
+    "playerImage": "Player Images/smooth-jazz-player.webp",
+    "colorMode": "light"
+  },
+  {
+    "id": "spacey rnb",
+    "title": "Spacey RnB",
+    "date": "2022-10-01",
+    "audio": "Audio/SPACEY_RNB_BEAT.mp3",
+    "playerImage": "Player Images/spacey-rnb-player.webp",
+    "colorMode": "dark"
+  },
+  {
+    "id": "spacey sad",
+    "title": "Spacey Sad",
+    "date": "2022-09-25",
+    "audio": "Audio/SPACEY_SAD_SYNTH_BEAT.mp3",
+    "playerImage": "Player Images/spacey-sad-player.webp",
+    "colorMode": "dark"
+  },
+  {
+    "id": "synth hyperpop",
+    "title": "Synth Hyperpop",
+    "date": "2022-10-10",
+    "audio": "Audio/SYNTH_HYPERPOP_BEAT.mp3",
+    "playerImage": "Player Images/hyper-synth-player.webp",
+    "colorMode": "light"
+  },
+  {
+    "id": "synthy bass",
+    "title": "Synthy Bass",
+    "date": "2022-10-22",
+    "audio": "Audio/SYNTHY_BASS_BEAT.mp3",
+    "playerImage": "Player Images/synthy-bass-player.webp",
+    "colorMode": "light"
+  },
+  {
+    "id": "synthy pad",
+    "title": "Synthy Pad",
+    "date": "2022-09-04",
+    "audio": "Audio/SYNTHY_PAD_BEAT.mp3",
+    "playerImage": "Player Images/synthy-pas-player.webp",
+    "colorMode": "light"
+  }
+]

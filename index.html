@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Joshua Holden Portfolio</title>
+  <link rel="stylesheet" href="https://use.typekit.net/rkh0uuh.css">
+  <link rel="stylesheet" href="https://db.onlinewebfonts.com/c/e50f08c648d677fc2b0f52ac98afb797?family=Ayuthaya">
+  
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { overflow-x: hidden; overflow-y: auto !important; }
+    
+    .portfolio-section {
+      width: 100vw;
+      height: 100vh;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .web-intro-section { 
+      background-color: black; 
+      position: relative;
+      z-index: 1;
+    }
+    .thermal-section { background: #111; }
+    .barre-section { background: #ffe9ef; }
+    .doors-section { background: #fff6f6; }
+    .style-graphic-section { background: #000; }
+    .parks-section { background: #fff; }
+    .music-section { background: #000; }
+    
+    .loading {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: #baff78;
+      font-family: Arial, sans-serif;
+      z-index: 9999;
+      background: rgba(0, 0, 0, 0.8);
+      padding: 20px;
+      border-radius: 10px;
+    }
+    
+    .section-loader {
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    
+    .section-loader.loaded {
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+  <div class="loading" id="loading">Loading Portfolio...</div>
+  
+  <!-- Web Intro Section -->
+  <div class="portfolio-section web-intro-section section-loader" id="web-intro-section">
+    <!-- Content will be loaded here -->
+  </div>
+  
+  <!-- Thermal Section -->
+  <div class="portfolio-section thermal-section section-loader" id="thermal-section">
+    <!-- Content will be loaded here -->
+  </div>
+  
+  <!-- Barre Section -->
+  <div class="portfolio-section barre-section section-loader" id="barre-section">
+    <!-- Content will be loaded here -->
+  </div>
+  
+  <!-- Doors Section -->
+  <div class="portfolio-section doors-section section-loader" id="doors-section">
+    <!-- Content will be loaded here -->
+  </div>
+  
+  <!-- Style Graphic Section -->
+  <div class="portfolio-section style-graphic-section section-loader" id="style-graphic-section">
+    <!-- Content will be loaded here -->
+  </div>
+  
+  <!-- Parks Section -->
+  <div class="portfolio-section parks-section section-loader" id="parks-section">
+    <!-- Content will be loaded here -->
+  </div>
+  
+  <!-- Music Section -->
+  <div class="portfolio-section music-section section-loader" id="music-section">
+    <!-- Content will be loaded here -->
+  </div>
+  
+  <!-- Section Loader Script -->
+  <script src="LoadSections.js"></script>
+</body>
+</html>

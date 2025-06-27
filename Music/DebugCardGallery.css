@@ -1,0 +1,356 @@
+/* Debug Card Gallery Styles - Simplified for Testing */
+
+/* Global styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "figtree", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    text-transform: uppercase;
+    background: #000000;
+    color: #fff;
+    overflow-x: hidden;
+    min-height: 100vw;
+}
+
+/* Music Hero Section */
+.music-hero-section {
+    position: relative;
+    width: 100vw;
+    height: 60vw;
+    background-image: url('music-bg@3x.webp');
+    background-size: 115%;
+    background-position: center -50vw;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: rgb(0, 0, 0);
+}
+
+.stacked-text {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(-8vw);
+}
+
+.music-text {
+    font-family: "podium-soft-variable", sans-serif;
+    font-variation-settings: "wdth" 200;
+    font-size:6.5vw;
+    font-weight: 800;
+    line-height: 1;
+    width: 100%;
+    text-align: center;
+    position: relative;
+}
+
+.music-text-1 {
+    transform: scaleY(0.4);
+    margin-bottom: -3.6vw;
+}
+
+.music-text-2 {
+    transform: scaleY(0.6);
+    margin-bottom: -2.5vw;
+}
+
+.music-text-3 {
+    transform: scaleY(0.8);
+    margin-bottom: -1.2vw;
+}
+
+.music-text-4 {
+    transform: scaleY(1.1);
+    margin-bottom: .7vw;
+}
+
+.music-text-5 {
+    transform: scaleY(1.5);
+}
+
+.hero-content h1 {
+    font-family: "podium-soft-variable", sans-serif;
+    font-variation-settings: "wdth" 200;
+    font-size: 6vw;
+}
+
+.hero-content p {
+    font-size: 1.5vw;
+    font-weight: 400;
+    opacity: 0.9;
+}
+
+/* Gallery container styles */
+.gallery-container {
+    position: relative;
+    width: 100vw;
+    height: 100vw;
+    margin-top: -30vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.cards-wrapper {
+    position: relative;
+    width: 80vw;
+    height: 70vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Card styles */
+.card {
+    position: absolute;
+    width: 20vw; /* reverted from 28vw */
+    height: 28vw; /* reverted from 38vw */
+    transform-origin: center center;
+}
+
+/* Simple white card design */
+.debug-card {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: #ffffff;
+    border-radius: 1.5vw;
+    box-shadow: 0 2vw 6vw rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5vw;
+    font-weight: bold;
+    color: #000000;
+    text-align: center;
+    transition: box-shadow 0.3s ease;
+}
+
+.debug-card:hover {
+    box-shadow: 0 3.5vw 9vw rgba(0, 0, 0, 0.7);
+}
+
+
+/* Scroll text styles */
+.scroll-text {
+    position: absolute;
+    font-size: 1.2vw;
+    font-weight: 800;
+    color: rgba(255, 255, 255, 0.7);
+    letter-spacing: 0.2vw;
+    z-index: 100;
+    transform-origin: center;
+    white-space: nowrap;
+}
+
+.scroll-left {
+    left: 2vw;
+    top: 50%;
+    transform: translateY(-50%) rotate(-90deg);
+}
+
+.scroll-right {
+    right: 2vw;
+    top: 50%;
+    transform: translateY(-50%) rotate(90deg);
+}
+
+/* Hover zone styles */
+.hover-zone {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 25vw;
+    height: 50vh;
+    z-index: 50;
+}
+
+.hover-left {
+    left: 0;
+}
+
+.hover-right {
+    right: 0;
+}
+
+/* Music Card Styles */
+.track-card {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    border-radius: 2vw; /* reverted from 2.8vw */
+    overflow: hidden;
+    box-shadow: 0 2vw 6vw rgba(0, 0, 0, 0.4); /* reverted shadow */
+    transition: box-shadow 0.3s ease;
+}
+
+.track-overlay {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    color: white;
+    height: 6vw;
+    width: 18.7vw;
+    bottom: .9vw;
+    left: 50%;
+    transform: translateX(-50%);
+    mix-blend-mode: overlay;
+}
+
+.track-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1vw;
+}
+
+.track-title {
+    font-size: .9vw;
+    font-weight: 700;
+}
+
+.track-date {
+    font-size: .9vw;
+    font-weight: 700;
+}
+
+/* Dark mode styles */
+.track-card.dark-mode .track-overlay {
+    mix-blend-mode: normal;
+}
+
+/* Time display styles */
+.time-display {
+    position: absolute;
+    font-size: .9vw;
+    font-weight: 700;
+    color: white;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 12;
+}
+
+.time-display.current-time {
+    left: 1vw;
+}
+
+.time-display.total-time {
+    right: 1vw;
+}
+
+/* Play button styles */
+.play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 2.2vw;
+    height: 2.2vw;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 11;
+}
+
+.play-pause-icon {
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: visible;
+}
+
+.play-pause-icon path {
+    fill: rgba(255, 255, 255, 0);
+    stroke: rgb(255, 255, 255);
+    stroke-width: 3;
+}
+
+.play-button.playing .play-pause-icon path {
+    fill: rgba(255, 255, 255, 0);
+}
+
+/* Loading state for play button */
+.play-button:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.play-button.loading .play-pause-icon {
+    animation: loadingPulse 1.5s ease-in-out infinite;
+}
+
+@keyframes loadingPulse {
+    0%, 100% { 
+        opacity: 0.4; 
+        transform: scale(1);
+    }
+    50% { 
+        opacity: 1; 
+        transform: scale(1.1);
+    }
+}
+
+/* Progress bar styles */
+.progress-bar-container {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 1.4vw;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+    transform-origin: bottom center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+
+.progress-bar-bg {
+    fill: none;
+    stroke: rgba(255, 255, 255);
+    stroke-width: 9;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.progress-bar-fill {
+    fill: white;
+    stroke: none;
+}
+
+.progress-bar-container:hover .progress-bar-bg {
+    stroke: rgba(255, 255, 255);
+}
+
+/* Hide audio element */
+audio {
+    display: none;
+}

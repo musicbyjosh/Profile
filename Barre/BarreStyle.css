@@ -1,0 +1,445 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: auto;
+  min-height: 100vh;
+  background-color: #ffe0ea;
+  overflow-x: hidden;
+}
+
+.hero-section {
+  height: 42vw; /* Increased height to accommodate subtext */
+  position: relative;
+  width: 100%;
+  overflow: visible; /* Ensure content isn't clipped */
+}
+
+.svg-title-container {
+  position: absolute;
+  top: 5vw;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  /* Enhanced container optimization for smooth scrolling */
+  transform: translateZ(0); /* Force GPU layer */
+  will-change: transform;
+  contain: layout style paint; /* Optimize rendering */
+  overflow: visible; /* Ensure subtext isn't clipped */
+  min-height: 35vw; /* Ensure adequate height for all content */
+}
+
+.title-svg {
+  height: 9vw;
+  display: block;
+  object-fit: contain;
+  width: auto;
+  margin-top: -.5vw;
+  position: relative;
+  /* Enhanced hardware acceleration for smoother animations */
+  will-change: transform;
+  transform: translateZ(0); /* Force GPU acceleration */
+  backface-visibility: hidden; /* Prevent flickering */
+  /* Smooth interpolation for better animation quality */
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+
+.title-svg:first-child {
+  margin-top: 0;
+}
+
+/* Static transforms removed - now controlled by JavaScript scroll animation */
+
+.top-line, .bottom-line {
+  width: 45vw;
+  height: .25vw;
+  background-color: #eb7cab;
+}
+
+.top-line {
+  align-self: flex-start;
+  margin-bottom: 2vw;
+}
+
+.bottom-line {
+  align-self: flex-end;
+  margin-top: 1vw;
+  position: relative;
+  /* Ensure adequate space for subtext without affecting line thickness */
+  overflow: visible; /* Allow subtext to extend beyond line bounds */
+}
+
+.subtext-line {
+  font-family: "bely-display", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.25vw;
+  color: #eb7cab;
+  position: absolute;
+  right: calc(100% + 1vw);
+  top: 50%;
+  transform: translateY(-50%);
+  white-space: nowrap;
+  /* Ensure subtext stays in place and visible */
+  z-index: 15;
+  will-change: auto; /* Don't optimize transforms for this element */
+  pointer-events: none; /* Prevent interaction issues */
+}
+
+.cards-section, .posters-section {
+  width: 100%;
+  padding: 2vw 5vw;
+}
+
+.posters-section {
+  padding: 5vw 5vw;
+}
+
+.cards-container, .posters-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3vw;
+}
+
+/* Card Wrapper with 3D Perspective */
+.card-wrapper {
+  position: relative;
+  max-width: 34vw;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+  cursor: pointer;
+  /* Hardware acceleration for smoother animations */
+  will-change: transform;
+  isolation: isolate;
+}
+
+.card-wrapper[data-card="loyalty"] {
+  transform: translateY(3vw);
+}
+
+/* Card faces for 3D flip */
+.card-front, .card-back {
+  position: relative;
+  width: 100%;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  /* Hardware acceleration */
+  will-change: transform;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.card-back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: rotateY(180deg);
+}
+
+.card-front {
+  transform: rotateY(0deg);
+}
+
+.card-image {
+  max-width: 34vw;
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+}
+
+.poster-wrapper {
+  position: relative;
+  max-width: 36vw;
+}
+
+.poster-wrapper:nth-child(1) {
+  rotate: -6deg;
+  left: 2vw;
+  z-index: 3;
+}
+
+.poster-wrapper:nth-child(2) {
+  transform: translateY(9vw);
+  rotate: 8deg;
+}
+
+.poster-box, .poster-image {
+  border: .45vw solid #eb7cab;
+}
+
+.poster-box {
+  position: absolute;
+  top: 1vw;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.poster-wrapper:nth-child(1) .poster-box {
+  left: -1vw;
+  top: -1vw;
+}
+
+.poster-wrapper:nth-child(2) .poster-box {
+  left: 1vw;
+  top: -1vw;
+}
+
+.poster-image {
+  position: relative;
+  max-width: 46vw;
+  width: 100%;
+  height: auto;
+  z-index: 2;
+}
+
+/* Banner Section */
+.banner-section {
+  width: 100%;
+  overflow: hidden;
+  background-color: transparent; /* Remove background to let pink show through */
+  padding: 0vw 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  --banner-speed: 45s; /* Faster scroll speed for better visibility */
+  position: relative;
+  z-index: 10; /* Keep banner on top */
+  /* Enhanced stability */
+  will-change: transform;
+  transform: translateZ(0); /* Force GPU acceleration */
+}
+
+.banner-container {
+  width: 100%;
+  overflow: hidden;
+  height: clamp(120px, 22vw, 400px); /* Responsive height with min/max limits */
+  display: flex;
+  align-items: center;
+  /* Enhanced container stability */
+  position: relative;
+  backface-visibility: hidden;
+}
+
+.banner-track {
+  display: flex;
+  animation: scrollBanner var(--banner-speed) linear infinite;
+  border: clamp(2px, 0.3vw, 8px) solid #eb7cab; /* Responsive border with limits */
+  rotate: -1.5deg;
+  height: clamp(60px, 7.8vw, 140px); /* Responsive height with min/max limits */
+  align-items: center;
+  width: max-content;
+  box-sizing: border-box;
+  /* Enhanced performance and stability */
+  will-change: transform;
+  transform: translateZ(0); /* Force GPU acceleration */
+  backface-visibility: hidden; /* Prevent flickering */
+  /* Ensure proper spacing */
+  gap: 0; /* Remove any gaps between images */
+}
+
+.banner-image {
+  height: clamp(50px, 7vw, 120px); /* Responsive height with min/max limits */
+  width: auto;
+  flex-shrink: 0;
+  display: block;
+  /* Enhanced image stability */
+  backface-visibility: hidden;
+  transform: translateZ(0); /* Individual GPU acceleration */
+  /* Prevent layout shifts */
+  max-width: none; /* Allow natural width */
+  object-fit: contain; /* Maintain aspect ratio */
+}
+
+/* Pure CSS seamless scrolling - moves by 50% for perfect loop */
+@keyframes scrollBanner {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Prevent banner flicker during page load */
+.banner-track {
+  /* Start animation only after page loads */
+  animation-play-state: paused;
+}
+
+.banner-track.loaded {
+  animation-play-state: running;
+}
+
+/* Media queries for banner responsiveness */
+@media (max-width: 768px) {
+  .banner-section {
+    --banner-speed: 35s; /* Faster on mobile for better visibility */
+  }
+  
+  .banner-track {
+    rotate: -1deg; /* Less rotation on mobile */
+  }
+  
+  .banner-container {
+    height: clamp(80px, 18vw, 300px); /* Smaller on mobile */
+  }
+  
+  .banner-track {
+    height: clamp(40px, 6vw, 100px); /* Smaller on mobile */
+  }
+  
+  .banner-image {
+    height: clamp(35px, 5.5vw, 90px); /* Smaller on mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .banner-section {
+    --banner-speed: 30s; /* Even faster on very small screens */
+  }
+  
+  .banner-track {
+    rotate: -0.5deg; /* Minimal rotation on very small screens */
+    border-width: 1px; /* Thinner border */
+  }
+}
+
+/* Respect user's motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .banner-track {
+    animation-duration: 120s; /* Much slower animation */
+  }
+  
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  
+  /* But keep the banner moving slightly for functionality */
+  .banner-track {
+    animation-duration: 120s !important;
+    animation-iteration-count: infinite !important;
+  }
+}
+
+/* Pink Section */
+.pink-section {
+  width: 100%;
+  background-color: #eb7cab;
+  padding: 8vw 5vw;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+  z-index: 5; /* Behind banner */
+  margin-top: -5vw; /* Overlap more with banner section */
+  padding-top: 15vw; /* Extra top padding to account for overlap */
+}
+
+.pink-box {
+  width: 100vw;
+  height: 50vw;
+  background-color: #eb7cab;
+  border-radius: 8vw;
+  margin-left: -40vw; /* Offset 30vw to the left, hanging off screen */
+  border: 0.3vw solid #ffe0ea;
+  position: relative;
+}
+
+.pink-box::before {
+  content: '';
+  position: absolute;
+  top: .2vw;
+  left: 1.5vw;
+  width: 100.5%;
+  height: 103.9%;
+  background-color: #ffe0ea;
+  border-radius: 9vw; /* Different corner radius for shadow */
+  z-index: -1;
+}
+
+.circle-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 4vw;
+  align-items: center;
+  justify-content: center;
+  margin-left: 7vw; /* Space from the pink box */
+}
+
+.circle-btn {
+  width: 2.3vw;
+  height: 2.3vw;
+  border-radius: 50%;
+  background-color: #eb7cab; /* Dark pink */
+  border: .45vw solid #ffe0ea; /* Light pink border */
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative; /* Needed for ::before positioning */
+    box-shadow: 0.2vw 0.2vw 0 #ffe0ea; /* Subtle shadow for depth */
+}
+
+.circle-btn:hover {
+  background-color: #ffe0ea;
+  transform: translate(0.24vw, 0.3vw);
+  box-shadow: 0vw 0vw 0 #ffe0ea; 
+}
+
+/* It Images inside Pink Box */
+.it-image {
+  position: absolute;
+  width: 25vw;
+  height: auto;
+  border: 0.5vw solid #ffe0ea;
+  opacity: 0;
+  transform: translateY(3vw) scale(0.8);
+}
+
+.it-1 {
+  top: 17vw;
+  right: 2.5vw;
+  rotate: -8deg;
+  z-index: 5;
+}
+
+.it-2 {
+  top: 13vw;
+  right: 8vw;
+  rotate: 5deg;
+  z-index: 4;
+}
+
+.it-3 {
+  top: 8vw;
+  right: 14vw;
+  rotate: -5deg;
+  z-index: 3;
+}
+
+.it-4 {
+  top: 4vw;
+  right: 19vw;
+  rotate: 2deg;
+  z-index: 2;
+}
+
+.it-5 {
+  top: -1vw;
+  right: 23vw;
+  rotate: -10deg;
+  z-index: 1;
+}

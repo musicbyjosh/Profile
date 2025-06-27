@@ -1,0 +1,36 @@
+.parks-container {
+    height: 40vw;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    background: #fce8d7;
+}
+
+.scrolling-strip {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: max-content;
+    gap: 3vw;
+    will-change: transform;
+}
+
+.poster-item {
+    flex-shrink: 0;
+    height: 30vw;
+    width: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.parks-poster {
+    height: 100%;
+    width: auto;
+    object-fit: contain;
+    border: .5vw solid #000;
+    will-change: transform, filter;
+}
