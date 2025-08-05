@@ -52,9 +52,34 @@
     .section-loader.loaded {
       opacity: 1;
     }
+    
+    .updates-banner {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: #ffd700;
+      color: #333;
+      text-align: center;
+      padding: 8px 0;
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      font-weight: bold;
+      z-index: 10000;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    
+    body {
+      padding-top: 40px; /* Add space for the banner */
+    }
   </style>
 </head>
 <body>
+  <!-- Updates Banner -->
+  <div class="updates-banner">
+    ⚠️ UPDATES: PENDING
+  </div>
+  
   <div class="loading" id="loading">Loading Portfolio...</div>
   
   <!-- Web Intro Section -->
