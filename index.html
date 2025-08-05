@@ -118,6 +118,12 @@
   </div>
   
   <!-- Section Loader Script -->
-  <script src="LoadSections.js"></script>
+  <script>
+    // Add cache busting timestamp
+    const timestamp = new Date().getTime();
+    const script = document.createElement('script');
+    script.src = `LoadSections.js?v=${timestamp}`;
+    document.head.appendChild(script);
+  </script>
 </body>
 </html>

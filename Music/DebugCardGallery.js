@@ -96,8 +96,9 @@ class DebugCardGallery {
             // Determine if we're in portfolio context or standalone
             const isPortfolioContext = window.location.pathname === '/' || window.location.pathname.includes('index.html');
             const tracksPath = isPortfolioContext ? 'Music/Tracks.json' : 'Tracks.json';
+            const timestamp = new Date().getTime();
             
-            const response = await fetch(tracksPath);
+            const response = await fetch(`${tracksPath}?v=${timestamp}`);
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }

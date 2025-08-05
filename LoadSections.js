@@ -40,9 +40,10 @@ async function loadGSAPDependencies() {
 
 async function loadWebIntroSection() {
   console.log('Loading Web Intro...');
+  const timestamp = new Date().getTime();
   const [cssResponse, htmlResponse] = await Promise.all([
-    fetch('Web Intro/style.css'),
-    fetch('Web Intro/index.html')
+    fetch(`Web Intro/style.css?v=${timestamp}`),
+    fetch(`Web Intro/index.html?v=${timestamp}`)
   ]);
   
   if (!cssResponse.ok || !htmlResponse.ok) {
@@ -337,9 +338,10 @@ async function loadMusicSection() {
   console.log('Loading Music...');
   
   try {
+    const timestamp = new Date().getTime();
     const [cssResponse, htmlResponse] = await Promise.all([
-      fetch('Music/DebugCardGallery.css'),
-      fetch('Music/DebugCardGallery.html')
+      fetch(`Music/DebugCardGallery.css?v=${timestamp}`),
+      fetch(`Music/DebugCardGallery.html?v=${timestamp}`)
     ]);
     
     if (!cssResponse.ok || !htmlResponse.ok) {
