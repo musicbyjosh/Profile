@@ -34,6 +34,11 @@
         <h3>Background Image Test</h3>
         <p>Testing background image loading...</p>
     </div>
+    
+    <div id="music-cards-test" class="test">
+        <h3>Music Cards Test</h3>
+        <p>Testing music card gallery loading...</p>
+    </div>
 
     <script>
         document.getElementById('timestamp').textContent = new Date().toISOString();
@@ -104,6 +109,45 @@
             bgImageTest.innerHTML += '<p>Path: Web Intro/Intro-Bg@2x.webp</p>';
         };
         img.src = 'Web Intro/Intro-Bg@2x.webp?v=' + Date.now();
+        
+        // Test music cards loading
+        const musicCardsTest = document.getElementById('music-cards-test');
+        
+        // Check if GSAP is available
+        if (typeof window.gsap !== 'undefined') {
+            musicCardsTest.innerHTML += '<p>✅ GSAP is available</p>';
+        } else {
+            musicCardsTest.className = 'test error';
+            musicCardsTest.innerHTML += '<p>❌ GSAP not available</p>';
+            return;
+        }
+        
+        // Test music JavaScript loading
+        fetch('Music/DebugCardGallery.js?v=' + Date.now())
+            .then(response => response.text())
+            .then(jsContent => {
+                if (jsContent.includes('DebugCardGallery')) {
+                    musicCardsTest.innerHTML += '<p>✅ Music JS file loaded</p>';
+                    
+                    // Check if the class is available
+                    setTimeout(() => {
+                        if (typeof window.DebugCardGallery === 'function') {
+                            musicCardsTest.className = 'test success';
+                            musicCardsTest.innerHTML += '<p>✅ DebugCardGallery class available</p>';
+                        } else {
+                            musicCardsTest.className = 'test error';
+                            musicCardsTest.innerHTML += '<p>❌ DebugCardGallery class not available</p>';
+                        }
+                    }, 1000);
+                } else {
+                    musicCardsTest.className = 'test error';
+                    musicCardsTest.innerHTML += '<p>❌ Music JS content invalid</p>';
+                }
+            })
+            .catch(error => {
+                musicCardsTest.className = 'test error';
+                musicCardsTest.innerHTML += '<p>❌ Error loading Music JS: ' + error.message + '</p>';
+            });
     </script>
 </body>
 </html>

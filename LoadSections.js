@@ -24,12 +24,13 @@ async function loadPortfolio() {
 async function loadGSAPDependencies() {
   console.log('Loading GSAP dependencies...');
   try {
+    const timestamp = new Date().getTime();
     await Promise.all([
-      loadScript('minified/gsap.min.js'),
-      loadScript('minified/SplitText.min.js'),
-      loadScript('minified/ScrollTrigger.min.js'),
-      loadScript('minified/CustomEase.min.js'),
-      loadScript('Three/three.core.min.js')
+      loadScript(`minified/gsap.min.js?v=${timestamp}`),
+      loadScript(`minified/SplitText.min.js?v=${timestamp}`),
+      loadScript(`minified/ScrollTrigger.min.js?v=${timestamp}`),
+      loadScript(`minified/CustomEase.min.js?v=${timestamp}`),
+      loadScript(`Three/three.core.min.js?v=${timestamp}`)
     ]);
     console.log('GSAP dependencies loaded');
   } catch (error) {
@@ -413,11 +414,11 @@ async function loadMusicSection() {
     console.log('Loading GSAP plugins required for music gallery...');
     try {
       await Promise.all([
-        loadScript('minified/CustomBounce.min.js'),
-        loadScript('minified/Observer.min.js'),
-        loadScript('minified/Draggable.min.js'),
-        loadScript('minified/InertiaPlugin.min.js'),
-        loadScript('minified/MorphSVGPlugin.min.js')
+        loadScript(`minified/CustomBounce.min.js?v=${timestamp}`),
+        loadScript(`minified/Observer.min.js?v=${timestamp}`),
+        loadScript(`minified/Draggable.min.js?v=${timestamp}`),
+        loadScript(`minified/InertiaPlugin.min.js?v=${timestamp}`),
+        loadScript(`minified/MorphSVGPlugin.min.js?v=${timestamp}`)
       ]);
       console.log('Music-specific GSAP plugins loaded successfully');
     } catch (error) {
@@ -426,7 +427,7 @@ async function loadMusicSection() {
     }
 
     // Load music script AFTER ensuring all GSAP plugins are ready
-    await loadScript('Music/DebugCardGallery.js');
+    await loadScript(`Music/DebugCardGallery.js?v=${timestamp}`);
     
     console.log('Music script loaded, initializing gallery...');
     
@@ -504,7 +505,9 @@ async function loadMusicSection() {
 
 function loadScript(src) {
   return new Promise((resolve, reject) => {
-    if (document.querySelector(`script[src="${src}"]`)) {
+    // Extract base path without query parameters for duplicate checking
+    const baseSrc = src.split('?')[0];
+    if (document.querySelector(`script[src^="${baseSrc}"]`)) {
       resolve();
       return;
     }
