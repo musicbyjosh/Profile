@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debug GitHub Pages</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .test { margin: 10px 0; padding: 10px; border: 1px solid #ccc; }
+        .success { background: #d4edda; border-color: #c3e6cb; }
+        .error { background: #f8d7da; border-color: #f5c6cb; }
+    </style>
+</head>
+<body>
+    <h1>GitHub Pages Debug Test</h1>
+    <p>Timestamp: <span id="timestamp"></span></p>
+    
+    <div id="banner-test" class="test">
+        <h3>Banner Test</h3>
+        <p>Looking for updates banner...</p>
+    </div>
+    
+    <div id="tracks-test" class="test">
+        <h3>Tracks JSON Test</h3>
+        <p>Testing Tracks.json loading...</p>
+    </div>
+    
+    <div id="web-intro-test" class="test">
+        <h3>Web Intro Test</h3>
+        <p>Testing Web Intro files...</p>
+    </div>
+    
+    <div id="bg-image-test" class="test">
+        <h3>Background Image Test</h3>
+        <p>Testing background image loading...</p>
+    </div>
+
+    <script>
+        document.getElementById('timestamp').textContent = new Date().toISOString();
+        
+        // Test banner
+        const banner = document.querySelector('.updates-banner');
+        const bannerTest = document.getElementById('banner-test');
+        if (banner) {
+            bannerTest.className = 'test success';
+            bannerTest.innerHTML += '<p>✅ Banner found!</p>';
+        } else {
+            bannerTest.className = 'test error';
+            bannerTest.innerHTML += '<p>❌ Banner not found</p>';
+        }
+        
+        // Test tracks
+        fetch('Music/Tracks.json?v=' + Date.now())
+            .then(response => response.json())
+            .then(tracks => {
+                const tracksTest = document.getElementById('tracks-test');
+                const nickspo = tracks.find(t => t.id === 'Nickspo');
+                if (nickspo) {
+                    tracksTest.className = 'test success';
+                    tracksTest.innerHTML += '<p>✅ Nickspo track found!</p>';
+                    tracksTest.innerHTML += '<p>Date: ' + nickspo.date + '</p>';
+                } else {
+                    tracksTest.className = 'test error';
+                    tracksTest.innerHTML += '<p>❌ Nickspo track not found</p>';
+                }
+                tracksTest.innerHTML += '<p>Total tracks: ' + tracks.length + '</p>';
+            })
+            .catch(error => {
+                const tracksTest = document.getElementById('tracks-test');
+                tracksTest.className = 'test error';
+                tracksTest.innerHTML += '<p>❌ Error loading tracks: ' + error.message + '</p>';
+            });
+            
+        // Test web intro
+        fetch('Web Intro/index.html?v=' + Date.now())
+            .then(response => response.text())
+            .then(html => {
+                const webIntroTest = document.getElementById('web-intro-test');
+                if (html.includes('Joshua Holden')) {
+                    webIntroTest.className = 'test success';
+                    webIntroTest.innerHTML += '<p>✅ Web Intro HTML loaded!</p>';
+                } else {
+                    webIntroTest.className = 'test error';
+                    webIntroTest.innerHTML += '<p>❌ Web Intro content missing</p>';
+                }
+            })
+            .catch(error => {
+                const webIntroTest = document.getElementById('web-intro-test');
+                webIntroTest.className = 'test error';
+                webIntroTest.innerHTML += '<p>❌ Error loading Web Intro: ' + error.message + '</p>';
+            });
+            
+        // Test background image
+        const bgImageTest = document.getElementById('bg-image-test');
+        const img = new Image();
+        img.onload = function() {
+            bgImageTest.className = 'test success';
+            bgImageTest.innerHTML += '<p>✅ Background image loaded successfully!</p>';
+            bgImageTest.innerHTML += '<p>Dimensions: ' + this.width + 'x' + this.height + '</p>';
+        };
+        img.onerror = function() {
+            bgImageTest.className = 'test error';
+            bgImageTest.innerHTML += '<p>❌ Background image failed to load</p>';
+            bgImageTest.innerHTML += '<p>Path: Web Intro/Intro-Bg@2x.webp</p>';
+        };
+        img.src = 'Web Intro/Intro-Bg@2x.webp?v=' + Date.now();
+    </script>
+</body>
+</html>

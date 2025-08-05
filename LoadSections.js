@@ -52,8 +52,15 @@ async function loadWebIntroSection() {
   
   // Load CSS with scroll fixes
   const cssText = await cssResponse.text();
+  
+  // Fix background image paths for portfolio context
+  const fixedCssText = cssText
+    .replace(/url\('Web Intro\/intro-bg@2x\.webp'\)/g, "url('Web Intro/Intro-Bg@2x.webp')")
+    .replace(/url\('Intro-Bg@2x\.webp'\)/g, "url('Web Intro/Intro-Bg@2x.webp')")
+    .replace(/url\('intro-bg@2x\.webp'\)/g, "url('Web Intro/Intro-Bg@2x.webp')");
+  
   const style = document.createElement('style');
-  style.textContent = cssText + `
+  style.textContent = fixedCssText + `
     body { height: auto !important; overflow-y: auto !important; display: block !important; }
     .web-intro-section { height: 100vh !important; display: flex !important; align-items: center !important; justify-content: space-between !important; }
     .web-intro-section h1 { font-family: griffith-gothic, sans-serif !important; font-weight: 900 !important; font-style: italic !important; }
