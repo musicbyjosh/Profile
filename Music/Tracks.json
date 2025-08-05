@@ -288,4 +288,12 @@
     "playerImage": "Player Images/synthy-pas-player.webp",
     "colorMode": "light"
   }
+  {
+    "id": "Nickspo",
+    "title": "Nickspo",
+    "date": "2025-08-05",
+    "audio": "Audio/Nickspo_080525.mp3",
+    "playerImage": "Player Images/nickspo_player.webp",
+    "colorMode": "light"
+  },
 ]
